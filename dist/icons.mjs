@@ -1,0 +1,26 @@
+const paths = {
+ studio:'<rect x="3" y="4" width="18" height="16" rx="3"/><path d="m7 9 3 3-3 3m6 0h4"/>',
+ schema:'<rect x="3" y="3" width="7" height="6" rx="1.4"/><rect x="14" y="15" width="7" height="6" rx="1.4"/><path d="M6.5 9v6a3 3 0 0 0 3 3H14m-1-12h5v6"/>',
+ history:'<path d="M3.3 10a9 9 0 1 1 .8 7M3 4v6h6m3-3v6l4 2"/>',
+ db:'<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 4 16 4 16 0V5M4 12v7c0 4 16 4 16 0v-7"/>',
+ layers:'<path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/>',
+ shield:'<path d="m12 3 7 3v5c0 5-4 8-7 10-3-2-7-5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/>',
+ copy:'<rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/>',
+ spark:'<path d="m11 3 1.9 6.1L19 11l-6.1 1.9L11 19l-1.9-6.1L3 11l6.1-1.9L11 3Z"/><path d="m19 2 .8 2.2L22 5l-2.2.8L19 8l-.8-2.2L16 5l2.2-.8L19 2Z"/>',
+ play:'<path d="m7 4 13 8-13 8z" fill="currentColor" stroke="none"/>',
+ chart:'<path d="M3 4v16h18M6 15l4-5 4 3 5-6"/>',
+ table:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/>',
+ code:'<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>',
+ check:'<path d="m5 12 4.5 4.5L19 7"/>', clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+ download:'<path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4"/>', chev:'<path d="m9 6 6 6-6 6"/>',
+ box:'<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3ZM4 7.5l8 4.5 8-4.5M12 12v9"/>',
+ globe:'<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>',
+ wallet:'<rect x="3" y="6" width="17" height="14" rx="2"/><path d="M5 6V4h12v2m3 5h-5v4h5"/>',
+ menu:'<path d="M3 6h18M3 12h18M3 18h18"/>', close:'<path d="m6 6 12 12M18 6 6 18"/>',
+ rows:'<path d="M4 6h16M4 12h16M4 18h16"/>', info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/>',
+ key:'<circle cx="8" cy="9" r="4"/><path d="m11 12 7 7h3v-3h-3v-3h-3"/>', search:'<circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/>',
+ folder:'<path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>',
+ compass:'<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/>',
+ bars:'<path d="M4 20h16M6 16v-4m6 4V5m6 11V9"/>'
+};
+export function icon(name,size=18) {return '<svg class="icon" aria-hidden="true" width="'+size+'" height="'+size+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(paths[name]||'')+'</svg>';}

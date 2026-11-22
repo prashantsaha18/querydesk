@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#121426">
+<title>Querydesk · Query studio</title>
+<meta name="description" content="Explore a sample retail database in plain English. Inspect the read-only SQL, charts, and results.">
+<link rel="icon" href="./mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./style.css">
+<script defer src="./vendor/sql-asm.js"></script><script type="module" src="./app.mjs"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<button id="scrim" aria-label="Close navigation" hidden></button>
+<aside id="sidebar">
+  <a class="brand" href="#studio"><img src="./mark.svg" width="35" height="35" alt=""><span>Querydesk</span></a>
+  <div class="side-group"><div class="side-label">Workspace</div><nav id="nav" aria-label="Workspace"></nav></div>
+  <div class="side-group data-group"><div class="side-label">Database</div><button class="db-side" data-nav="schema"><span class="db-tile" data-icon="db"></span><span><strong>Retail analytics</strong><small>Sample database</small></span></button></div>
+  <div class="side-bottom"><span class="online-dot"></span><span id="connection">Opening database</span></div>
+</aside>
+<div class="shell">
+  <header class="top"><div class="crumb"><button id="mobileMenu" class="iconbutton" aria-label="Open navigation" aria-expanded="false" data-icon="menu"></button><span class="workspace-icon" data-icon="layers"></span><span>Workspace</span><span class="divider">/</span><b id="crumb">Query studio</b></div><span class="mode"><span data-icon="shield"></span> Read-only mode</span></header>
+  <main id="main" tabindex="-1">
+  <section id="studio">
+    <div class="page-heading"><div><h1>Query studio</h1><p>Ask questions in plain English and explore your retail data.</p></div></div>
+    <form id="composer" class="card">
+      <div class="card-head"><div class="head-glyph lavender" data-icon="spark"></div><h2><label for="question">Ask a question</label></h2></div>
+      <div class="entry"><textarea rows="2" maxlength="400" id="question" placeholder="What would you like to know about your data?" required>Show monthly revenue for the first half of 2025.</textarea><button id="run" class="primary" type="submit" disabled><span data-icon="play"></span><span>Run query</span></button></div>
+      <div class="examples"><span>Try asking</span><div id="suggestions"></div></div>
+      <p class="error" id="error" role="alert" hidden></p>
+    </form>
+    <div id="output" aria-busy="true">
+    <div class="analysis-grid">
+      <section class="card visual"><div class="card-head panel-head"><div class="head-glyph pale" data-icon="chart"></div><h2>Visualization</h2><span id="chartType" class="subtag"></span></div><div id="chart"></div></section>
+      <section class="card sql"><div class="card-head panel-head"><div class="head-glyph dark" data-icon="code"></div><h2>Generated SQL</h2><button id="copy" class="iconbutton" title="Copy SQL" aria-label="Copy SQL" disabled data-icon="copy"></button></div><div id="code" class="code" tabindex="0" aria-label="Generated SQL">Opening database…</div><div class="sql-footer"><span class="indicator"></span>SQLite<span class="sql-separator">/</span>Read-only query</div></section>
+    </div>
+    <section class="card result"><div class="result-heading"><div class="card-head"><div class="head-glyph pale" data-icon="table"></div><h2>Query results</h2><span id="rowcount" class="count-badge"></span></div><button class="secondary" id="export" disabled><span data-icon="download"></span>Export CSV</button></div><div id="results"></div><div class="result-footer" id="resultFooter"></div></section>
+    </div>
+  </section>
+  <section id="schema" hidden><div class="page-heading"><div><h1>Schema explorer</h1><p>Sales cover January–December 2025. Relative dates are measured from the latest order, December 31, 2025.</p></div></div><div id="schemaTables"></div></section>
+  <section id="history" hidden><div class="page-heading"><div><h1>Query history</h1><p>Reopen queries you’ve run in this browser.</p></div></div><div id="historyItems"></div></section>
+  <div class="sr-only" id="announce" role="status"></div>
+  </main>
+</div>
+</body></html>
